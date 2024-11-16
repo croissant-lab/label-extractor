@@ -1,12 +1,20 @@
 {
   "name": "label-extractor",
-  "version": "0.0.1",
   "type": "module",
+  "version": "0.0.1",
+  "description": "Extract all labels in json format",
+  "main": "dist/index.js",
+  "author": "croissant-lab",
+  "license": "MIT",
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/croissant-lab/label-extractor"
+  },
   "scripts": {
     "dev": "vite",
     "build": "tsc && vite build",
     "lint": "biome lint src",
-    "type-check": "tsx",
+    "type-check": "tsc",
     "test": "vitest"
   },
   "devDependencies": {
