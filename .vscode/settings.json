@@ -6,10 +6,21 @@
     "source.organizeImports.biome": "explicit",
     "source.addMissingImports": "explicit",
     "source.organizeImports": "explicit"
-  },  
-  // format
+  },
   "editor.tabSize": 2,
   "editor.insertSpaces": true,
   "typescript.tsdk": "node_modules/typescript/lib",
   "typescript.preferences.importModuleSpecifier": "non-relative",
+  "files.exclude": {
+    "/.git": true,
+    "/.DS_Store": true,
+    "/node_modules": true,
+    "/node_modules/": true
+  },
+  "search.exclude": {
+    "/node_modules": true
+  },
+  "files.watcherExclude": {
+    "/node_modules/": true
+  }
 }
