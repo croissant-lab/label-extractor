@@ -1,0 +1,24 @@
+name: create PR from renovate to develop
+
+on: workflow_dispatch
+  # schedule:
+  #   # 2weeks
+  #   - cron: '0 0 */14 * *'
+
+jobs:
+  pull:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+        with:
+          fetch-depth: 0
+      - name: Setup
+        uses: ./.github/actions/setup
+      - name: Create Pull Request
+        uses: peter-evans/create-pull-request@v7
+        with:
+          token: ${{ secrets.GITHUB_TOKEN }}
+          base: develop
+          head: renovate
+          title: '[Scheduled] Merge Renovate to Develop'
+          body: 'Automated PR to merge changes from renovate to develop'
