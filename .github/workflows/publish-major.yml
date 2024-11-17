@@ -21,7 +21,7 @@ jobs:
           git config --global user.email "bot@example.com"
           git config --global user.name "bot"
       - name: Update Version
-        run: npm version patch
+        run: npm version major
       - name: Push changes
         uses: ad-m/github-push-action@master
         with:
