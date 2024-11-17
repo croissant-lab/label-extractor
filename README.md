@@ -16,7 +16,7 @@ npm i -D label-extractor
 
 ## Branch Rules
 
-![image](https://github.com/user-attachments/assets/efc6c86f-7951-4bd8-8db9-5d6b17ca0a87)
+![image](https://github.com/user-attachments/assets/e675dc8c-6127-4b98-90e0-d4048697e1fc)
 
 ## References
 
