@@ -12,4 +12,4 @@ jobs:
       - name: Setup
         uses: ./.github/actions/setup
       - name: Publish
-        run: pnpm publish --access public --force --patch
+        run: npm publish --access public --force --patch
