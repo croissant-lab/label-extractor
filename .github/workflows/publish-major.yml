@@ -15,16 +15,16 @@ jobs:
         with:
           node-version: '20.x'
           registry-url: 'https://registry.npmjs.org'
-      - name: Build
-        run: pnpm run build
       - name: Update Version
         run: npm version patch
-      - name: Publish
-        env:
-          NODE_AUTH_TOKEN: ${{ secrets.NPM_TOKEN }}
-        run: npm publish --access public --force --patch
       - name: Commit Updated Version
         uses: stefanzweifel/git-auto-commit-action@v4
         with:
           commit_message: bump version
           branch: main
+      - name: Build
+        run: pnpm run build
+      - name: Publish
+        env:
+          NODE_AUTH_TOKEN: ${{ secrets.NPM_TOKEN }}
+        run: npm publish
