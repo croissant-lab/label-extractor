@@ -1,4 +1,4 @@
-name: Publish Minor
+name: publish Minor
 
 on:
   pull_request:
@@ -8,6 +8,7 @@ on:
 
 jobs:
   publish:
+    if: github.event.pull_request.merged == true
     runs-on: ubuntu-latest
     steps:
       - uses: actions/checkout@v4
@@ -30,7 +31,7 @@ jobs:
         uses: ad-m/github-push-action@master
         with:
           github_token: ${{ secrets.GITHUB_TOKEN }}
-          branch: ${{ github.ref }}
+          branch: ${{ github.event.pull_request.base.ref }}
       - name: Build
         run: pnpm run build
       - name: Publish
