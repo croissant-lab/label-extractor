@@ -1,9 +1,9 @@
 name: create PR from renovate to develop
 
-on: workflow_dispatch
-  # schedule:
-  #   # 2weeks
-  #   - cron: '0 0 */14 * *'
+on: 
+  schedule:
+    # 2weeks
+    - cron: '0 0 */14 * *'
 
 jobs:
   pull:
@@ -14,8 +14,6 @@ jobs:
           fetch-depth: 0
       - name: Setup
         uses: ./.github/actions/setup
-      - name: Checkout Renovate Branch
-        run: git checkout renovate
       - name: Create Pull Request
         uses: peter-evans/create-pull-request@v7
         with:
