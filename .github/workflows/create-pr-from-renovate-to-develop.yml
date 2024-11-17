@@ -14,6 +14,8 @@ jobs:
           fetch-depth: 0
       - name: Setup
         uses: ./.github/actions/setup
+      - name: Checkout Renovate Branch
+        run: git checkout renovate
       - name: Create Pull Request
         uses: peter-evans/create-pull-request@v7
         with:
