@@ -22,11 +22,11 @@ jobs:
           git config --global user.name "bot"
       - name: Update Version
         run: npm version patch
-      - name: Commit Updated Version
-        uses: stefanzweifel/git-auto-commit-action@v4
+      - name: Push changes
+        uses: ad-m/github-push-action@master
         with:
-          commit_message: bump version
-          branch: main
+          github_token: ${{ secrets.GITHUB_TOKEN }}
+          branch: ${{ github.ref }};
       - name: Build
         run: pnpm run build
       - name: Publish
