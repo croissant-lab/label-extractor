@@ -3,6 +3,7 @@
   "extends": ["config:base"],
   "timezone": "Asia/Tokyo",
   "labels": ["renovate"],
+  "baseBranches": ["renovate"],
   "automerge": true,
   "schedule": ["every weekend"]
 }
